@@ -1,0 +1,13 @@
+name: CI workflow for Python app test
+
+on:
+    push:
+        branches:
+            - "main"
+
+jobs:
+    python-app-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checking Python Version
+              run: python -V
