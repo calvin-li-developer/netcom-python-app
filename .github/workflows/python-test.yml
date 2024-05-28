@@ -7,7 +7,13 @@ on:
 
 jobs:
     python-app-test:
-        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            os: [ windows-latest, ubuntu-latest, macos-latest ]
+        runs-on: ${{ matrix.os }}
         steps:
             - name: Checking Python Version
               run: python -V
+            
+            - name: Checkout repository
+              uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 #v4.1.6
