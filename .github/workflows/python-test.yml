@@ -15,7 +15,7 @@ jobs:
               - macos-latest
         runs-on: ${{ matrix.os }}
         steps:
-            - name: Checking Python Version
+            - name: Checking Python Version on ${{ matrix.os }}
               run: python -V
             
             - name: Checkout repository
